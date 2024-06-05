@@ -62,3 +62,4 @@ end
 
 
 gem "tailwindcss-rails", "~> 2.6"
+gem 'letter_opener', group: :development
