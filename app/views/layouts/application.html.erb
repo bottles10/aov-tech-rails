@@ -12,8 +12,14 @@
   </head>
 
   <body class="font-serif">
+    <!-- header section -->
+    <%= render 'layouts/components/header' %>
+
     <main class="">
       <%= yield %>
     </main>
+
+    <!-- footer section -->
+    <%= render 'layouts/components/footer' %>
   </body>
 </html>
