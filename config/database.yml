@@ -79,6 +79,6 @@ test:
 #
 production:
   <<: *default
-  database: aov_tech_rails_production
-  username: aov_tech_rails
-  password: <%= ENV["AOV_TECH_RAILS_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
+  sslmode: require
+  sslrootcert: <%= Rails.root.join("config", "certs", "root.crt") %>
