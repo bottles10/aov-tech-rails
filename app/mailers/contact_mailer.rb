@@ -1,10 +1,10 @@
 class ContactMailer < ApplicationMailer
 
-    def contact_email(name, email, content)
+    def contact_email(name, from_email, content)
         @name = name
-        @email = email
+        @from_email = from_email
         @content = content
 
-        mail(from: @email, to: Rails.application.credentials.gmail.address, subject: 'New Project Form Submission')
+        mail(from: from_email, to: Rails.application.credentials.gmail.address, subject: 'New Project Form Submission')
     end
 end
