@@ -5,6 +5,6 @@ class ContactMailer < ApplicationMailer
         @from_email = from_email
         @content = content
 
-        mail(from: from_email, to: Rails.application.credentials.gmail.address, subject: 'New Project Form Submission')
+        mail(from: from_email, to: Rails.application.credentials.gmail.address, subject: 'Aov-Tech New Project Form Submission')
     end
 end

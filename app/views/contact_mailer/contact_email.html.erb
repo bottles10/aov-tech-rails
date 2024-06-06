@@ -1,5 +1,15 @@
-<p>You have a new Project Request form submission:</p>
-<p><strong>Name:</strong> <%= @name %></p>
-<p><strong>Email:</strong> <%= @from_email %></p>
-<br>
-<p><%= @content %></p>
+<div class="container">
+    <div class="header">
+      <h1>New Project Request</h1>
+    </div>
+    <div class="content">
+      <p>You have a new project request form submission:</p>
+      <p><strong>Name:</strong> <%= @name.titleize %></p>
+      <p><strong>Email:</strong> <%= @from_email.upcase %></p>
+      <p><strong>Message:</strong></p>
+      <p><%= @content %></p>
+    </div>
+    <div class="footer">
+      <p>&copy; <%= Time.now.year %> Aov-Tech. All rights reserved.</p>
+    </div>
+  </div>a

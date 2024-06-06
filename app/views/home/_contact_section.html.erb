@@ -22,38 +22,8 @@
         <h2 class="text-2xl md:text-3xl font-extrabold">Ready To Work With Us?</h2>
       </div>
     </div>
-    <!-- ready to work with us section contents  -->
-    <form action="/contacts" method="POST" class="md:w-3/5 mx-auto bg-blue-600 rounded-lg shadow-2xl">
-      <%= csrf_meta_tags %>
-      <div class="p-10 border-l-8 border-yellow-300 rounded-t-lg bg-blue-400">
-        <textarea name="content" id="content" cols="30" rows="2" placeholder="Tell us more about your project"
-        class="w-full pl-0 bg-transparent border-0 border-b border-blue-300 focus:border-orange-400 focus:outline-none focus:ring-0 placeholder-white" required></textarea>
-      </div>
-      <br>
-      <div class="p-10">
-        <input type="text" name="name" id="name" placeholder="name"
-        class="w-full pl-0 bg-transparent outline-none border-0 border-b border-blue-300 focus:border-orange-400 placeholder-blue-200" required>
-      </div>
-      <br>
-      <div class="p-10">
-        <input type="email" name="email" id="email" placeholder="email"
-        class="w-full pl-0 bg-transparent outline-none border-0 border-b border-blue-300 focus:border-orange-400 placeholder-blue-200" required>
-      </div>
-      <div class="-mt-5 p-10 lg:flex items-center justify-between space-y-10 lg:space-y-0">
-        <div>
-          <label for="file-upload" id="custom-file-upload"
-          class="flex items-center space-x-3 cursor-progress transform hover:scale-105 transition duration-500">
-            <%= image_tag("upload-file.png", alt: "file upload icon", width: "40") %>
-            <span class="text-sm font-bold">Attach File</span>
-          </label>
-          <input type="file" name="file" id="file-upload" class="hidden">
-        </div>
-        <div class="hover:scale-105 transition duration-500">
-          <button
-          class="py-2 px-6 text-sm font-semibold bg-pink-500 hover:bg-pink-400 rounded-full transition duration-500">Send
-            Request</button>
-        </div>
-      </div>
-    </form>
+   
+    <%= render "form" %>
+    
   </div>
 </div>

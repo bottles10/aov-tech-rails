@@ -6,7 +6,7 @@ class ContactsController < ApplicationController
         content = params[:content]
 
         ContactMailer.contact_email(name, email, content).deliver_now
-        flash[:notice] = 'Your request has been sent!'
-        redirect_to home_index_url
+        flash.now[:notice] = 'Your request has been sent!'
+        render :result
     end
 end
