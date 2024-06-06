@@ -64,3 +64,5 @@ end
 gem "tailwindcss-rails", "~> 2.6"
 gem 'letter_opener', group: :development
 gem "postmark-rails", "~> 0.22.1"
+
+gem "countries", "~> 6.0"

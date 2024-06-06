@@ -1,38 +1,48 @@
     <% if notice %>
-      <div class="mb-4 md:w-2/5 mx-auto">
-        <p class="p-2 text-lg text-center bg-green-100 text-green-600 font-bold rounded shadow"><%= notice %></p>
-        </div>
-    <% end %>
-    <!-- ready to work with us section contents  -->
- 
-    <form id="form-request" action="/contacts" method="POST" class="md:w-3/5 mx-auto bg-blue-600 rounded-lg shadow-2xl" enctype="multipart/form-data">
-      <div class="p-10 border-l-8 border-yellow-300 rounded-t-lg bg-blue-400">
-        <textarea name="content" id="content" cols="30" rows="2" placeholder="Tell us more about your project"
-        class="w-full pl-0 bg-transparent border-0 border-b border-blue-300 focus:border-orange-400 focus:outline-none focus:ring-0 placeholder-white" required></textarea>
-      </div>
-      <br>
-      <div class="p-10">
-        <input type="text" name="name" id="name" placeholder="name"
-        class="w-full pl-0 bg-transparent outline-none border-0 border-b border-blue-300 focus:border-orange-400 placeholder-blue-200" required>
-      </div>
-      <br>
-      <div class="p-10">
-        <input type="email" name="email" id="email" placeholder="email"
-        class="w-full pl-0 bg-transparent outline-none border-0 border-b border-blue-300 focus:border-orange-400 placeholder-blue-200" required>
-      </div>
-      <div class="-mt-5 p-10 lg:flex items-center justify-between space-y-10 lg:space-y-0">
-        <div>
-          <label for="file-upload" id="custom-file-upload"
-          class="flex items-center space-x-3 cursor-progress transform hover:scale-105 transition duration-500">
-            <%= image_tag("upload-file.png", alt: "file upload icon", width: "40") %>
-            <span class="text-sm font-bold">Attach File</span>
-          </label>
-          <input type="file" name="file" id="file-upload" class="hidden">
-        </div>
-        <div class="hover:scale-105 transition duration-500">
-          <button
-          class="py-2 px-6 text-sm font-semibold bg-pink-500 hover:bg-pink-400 rounded-full transition duration-500">Send
-            Request</button>
-        </div>
-      </div>
-    </form>
+  <div class="mb-4 md:w-2/5 mx-auto">
+    <p class="p-2 text-lg text-center bg-green-100 text-green-600 font-bold rounded shadow"><%= notice %></p>
+  </div>
+<% end %>
+<!-- ready to work with us section contents  -->
+<form id="form-request" action="/contacts" method="POST" class="md:w-3/5 mx-auto bg-blue-600 rounded-lg shadow-2xl" enctype="multipart/form-data">
+  <div class="p-10 border-l-8 border-yellow-300 rounded-t-lg bg-blue-400">
+    <textarea name="content" id="content" cols="30" rows="2" placeholder="Tell us more about your project"
+      class="w-full pl-0 bg-transparent border-0 border-b border-blue-300 focus:border-orange-400 focus:outline-none focus:ring-0 placeholder-white" required></textarea>
+  </div>
+  <br>
+  <div class="p-10">
+    <input type="text" name="name" id="name" placeholder="name"
+      class="w-full pl-0 bg-transparent outline-none border-0 border-b border-blue-300 focus:border-orange-400 placeholder-blue-200" required>
+  </div>
+  <br>
+  <div class="p-10">
+    <input type="email" name="email" id="email" placeholder="email"
+      class="w-full pl-0 bg-transparent outline-none border-0 border-b border-blue-300 focus:border-orange-400 placeholder-blue-200" required>
+  </div>
+  <br>
+  <div class="p-10">
+    <div class="flex items-center space-x-2">
+      <select name="country_code" id="country_code"
+        class="w-1/4 md:w-1/6 bg-transparent outline-none border-0 border-b border-blue-300 focus:border-orange-400 placeholder-blue-200" required>
+        <%= options_for_select(country_codes, class: "background-red-400") %>
+      </select>
+      <input type="tel" name="phone_number" id="phone_number" placeholder="phone number"
+        class="w-3/4 md:w-1/3 pl-0 bg-transparent outline-none font-bold border-0 border-b border-blue-300 focus:border-orange-400 placeholder-blue-200 placeholder-opacity-50 tracking-tighter" required>
+    </div>
+  </div>
+  <div class="-mt-5 p-10 lg:flex items-center justify-between space-y-10 lg:space-y-0">
+    <div>
+      <label for="file-upload" id="custom-file-upload"
+        class="flex items-center space-x-3 cursor-progress transform hover:scale-105 transition duration-500">
+        <%= image_tag("upload-file.png", alt: "file upload icon", width: "40") %>
+        <span class="text-sm font-bold">Attach File</span>
+      </label>
+      <input type="file" name="file" id="file-upload" class="hidden">
+    </div>
+    <div class="hover:scale-105 transition duration-500">
+      <button
+        class="w-full py-2 px-6 text-sm font-semibold bg-pink-500 hover:bg-pink-400 rounded-full transition duration-500">Send
+        Request</button>
+    </div>
+  </div>
+</form>

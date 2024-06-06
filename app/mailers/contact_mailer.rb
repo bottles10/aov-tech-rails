@@ -1,10 +1,11 @@
 class ContactMailer < ApplicationMailer
     default from: Rails.application.credentials.registered_domain_email
 
-    def contact_email(name, from_email, content, file=nil)
+    def contact_email(name, from_email, content, phone_number, file=nil)
         @name = name
         @from_email = from_email
         @content = content
+        @phone_number = phone_number
 
         attachments[file.original_filename] = file.read if file.present?
 
