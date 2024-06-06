@@ -1,4 +1,5 @@
 class ContactMailer < ApplicationMailer
+    default from: Rails.application.credentials.registered_domain_email
 
     def contact_email(name, from_email, content, file=nil)
         @name = name
@@ -7,6 +8,6 @@ class ContactMailer < ApplicationMailer
 
         attachments[file.original_filename] = file.read if file.present?
 
-        mail(from: from_email, to: Rails.application.credentials.gmail.address, subject: 'Aov-Tech New Project Form Submission')
+        mail(subject: 'Aov-Tech New Project Form Submission', to: Rails.application.credentials.gmail.address, from: Rails.application.credentials.registered_domain_email, track_opens: 'true', message_stream: 'outbound')
     end
 end
