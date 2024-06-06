@@ -5,8 +5,7 @@
     <% end %>
     <!-- ready to work with us section contents  -->
  
-    <form id="form-request" action="/contacts" method="POST" class="md:w-3/5 mx-auto bg-blue-600 rounded-lg shadow-2xl">
-      <%= csrf_meta_tags %>
+    <form id="form-request" action="/contacts" method="POST" class="md:w-3/5 mx-auto bg-blue-600 rounded-lg shadow-2xl" enctype="multipart/form-data">
       <div class="p-10 border-l-8 border-yellow-300 rounded-t-lg bg-blue-400">
         <textarea name="content" id="content" cols="30" rows="2" placeholder="Tell us more about your project"
         class="w-full pl-0 bg-transparent border-0 border-b border-blue-300 focus:border-orange-400 focus:outline-none focus:ring-0 placeholder-white" required></textarea>
