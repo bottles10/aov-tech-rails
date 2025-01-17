@@ -6,7 +6,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="<%= asset_path 'apple-touch-icon.png' %>">
     <link rel="icon" type="image/png" sizes="32x32" href="<%= asset_path 'favicon-32x32.png' %>">
     <link rel="icon" type="image/png" sizes="16x16" href="<%= asset_path 'favicon-16x16.png' %>">
-    <link rel="manifest" href="<%= asset_path 'site.webmanifest' %>">
     <meta name="description" content="Aov Tech the team of daring and skilled Ruby On Rails developers ready to accept the complex challenges. Get your website developed with innovative and practical solutions to achieve your goals and grow your business. ">
     <meta name="keywords" content="Aov tech, ruby on rails, rails, spa, webapp, hotwire">
     <link rel="canonical" href="https://aov-tech.onrender.com/">
@@ -30,6 +29,10 @@
       </script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+    <%= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
